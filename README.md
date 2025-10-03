@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Flask QR Generator
 
 A local-first Flask app to generate and customize QR codes (PNG) with colors, rounded modules, margins, and optional logo overlays. Includes HTML UI, REST endpoints, JSON API, logging, and tests.
@@ -38,3 +39,7 @@ docker run -p 5000:5000 qrgen
 
 ### AWS/Vercel
 Use Dockerfile for containerized deployment.
+=======
+# EasyMS-QR-Generator
+QR Code Generator
+>>>>>>> 5f58be8e7f9037543c4f44a3ad32552b12da8dc9
