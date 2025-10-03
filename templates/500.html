@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Server error</h4>
+  <p>Something went wrong. Please try again.</p>
+  <hr>
+  <a href="{{ url_for('home') }}" class="btn btn-secondary">Back</a>
+</div>
+{% endblock %}

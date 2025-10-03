@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-10">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h1 class="h4 mb-3">Your QR Codes</h1>
+        <p class="text-muted">Recent QR codes you've generated.</p>
+        {% if qrs %}
+          <div class="row">
+            {% for qr in qrs %}
+              <div class="col-md-4 mb-3">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <img src="{{ url_for('qr.download', id=qr.id) }}" alt="QR code" class="img-fluid" style="max-height: 150px;">
+                    <p class="small mt-2">{{ qr.content[:50] }}{% if qr.content|length > 50 %}...{% endif %}</p>
+                    <small class="text-muted">{{ qr.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
+                    <br>
+                    <a href="{{ url_for('qr.download', id=qr.id) }}" class="btn btn-sm btn-outline-primary mt-2">Download</a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p>No QR codes yet. <a href="{{ url_for('home') }}">Generate one</a>.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
